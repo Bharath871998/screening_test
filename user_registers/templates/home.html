@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | {% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <center>
+        <h1>Welcome to Python User register project</h1>
+        <li><a href="user_register">User_Register</a></li><br><br>
+        <li><a href="login">Login</a></li>
+
+        {% if user.is_authenticated %}
+        <h1>Welcome {{user.username}}</h1>
+        <li><a href="logout">Logout</a></li>
+        {% endif %}
+        
+    </center>
+
+    {% block body %}
+    {% endblock body %}
+</body>
+</html>

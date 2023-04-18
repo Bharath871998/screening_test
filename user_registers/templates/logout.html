@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+
+{% block title %}Logout{% endblock title %}
+
+{% block body %}
+{% if User.is_authenticated %}
+        <h1>Welcome {{User.username}}</h1>
+        <li><a href="logout">Logout</a></li>
+        {% endif %}
+
+
+<center>
+    <div class="row justify-content-around mt-3">
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+    </div>
+</center>
+{% endblock body %}
